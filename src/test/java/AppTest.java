@@ -2,9 +2,13 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
+import org.apache.log4j.*;
+
 import org.junit.Test;
 
 public class AppTest {
+
+	private static final Logger logger = (Logger) LogManager.getLogger(AppTest.class);
 
     @Test
     public void testNombreMaxOK() {
@@ -18,6 +22,8 @@ public class AppTest {
         } catch (LimiteVisiteurException e) {
             exc = e;
         }
+        BasicConfigurator.configure();
+        logger.info("test nombre max run successfully");
         assertNull(exc);
     }
 
