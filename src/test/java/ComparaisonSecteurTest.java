@@ -24,6 +24,8 @@ public class ComparaisonSecteurTest {
 		
 		ComparaisonSecteur cs = new ComparaisonSecteur();
 		assertEquals(cs.compare(secteur1, secteur2),1);
+		assertEquals(secteur1.compareTo(secteur2),1);
+
 		
 		
 	}
